@@ -1,0 +1,85 @@
+#include <iostream>
+using namespace std;
+
+#include "ItemToPurchase.h"
+
+int main() 
+{
+   
+   /* Type your code here */
+   itemToPurchase Item1;
+   itemToPurchase Item2;
+   //int count = 0;
+   
+   string itemName;
+   int itemPrice;
+   int itemQuantity;
+   
+   int Item1cost = 0;
+   int Item2cost = 0;
+   int Total = 0;
+   
+   //string item1Name = "none";
+   //string item2Name = "none";
+   
+   //ITEM 1
+   //cout << "Enter the item name: \n";
+   getline(cin, itemName);
+   Item1.SetName(itemName);
+   //item1Name = Item1.GetName();
+   //cin.ignore(100,'\n');
+   //cin.getline(cin,itemName);
+   //cout << Item1.GetName();
+   
+   //cout << "Enter the item price: \n";
+   cin >> itemPrice;
+   Item1.SetPrice(itemPrice);
+   cin.ignore(100,'\n');
+   //cin.getline(cin,itemPrice);
+   //cout << Item1.GetPrice() << "\n";
+   
+   //cout << "Enter the item quantity: \n";
+   cin >> itemQuantity;
+   Item1.SetQuantity(itemQuantity);
+   cin.ignore(100,'\n');
+   //cout << Item1.GetQuantity() << "\n";
+   
+   //ITEM 2
+   
+   //cout << "Enter the item name: \n";
+   getline(cin, itemName);
+   Item2.SetName(itemName);
+   //item2Name = Item2.GetName();
+   //cin.ignore(100,'\n');
+   //cin.getline(cin,itemName);
+   //cout << Item2.GetName() << "\n";
+   
+   //cout << "Enter the item price: \n";
+   cin >> itemPrice;
+   Item2.SetPrice(itemPrice);
+   cin.ignore(100,'\n');
+   //cin.getline(cin,itemPrice);
+   //cout << Item2.GetPrice() << "\n";
+   
+   //cout << "Enter the item quantity: \n";
+   cin >> itemQuantity;
+   Item2.SetQuantity(itemQuantity);
+   cin.ignore(100,'\n');
+   //cout << Item2.GetQuantity() << "\n";
+   
+   Item1cost = Item1.GetPrice();
+   Item1cost *= Item1.GetQuantity();
+   
+   Item2cost = Item2.GetPrice();
+   Item2cost *= Item2.GetQuantity();
+   Total = Item2cost+Item1cost;
+   
+   cout << "TOTAL COST" << endl;
+   cout << Item1.GetName();
+   printf(" %d @ $%d = $%d", Item1.GetQuantity(), Item1.GetQuantity(), Item1cost);
+   cout << endl << Item2.GetName();
+   printf(" %d @ $%d = $%d", Item2.GetQuantity(), Item2.GetQuantity(), Item2cost);
+   cout << endl << endl <<"Total: $" << Total;
+   
+   return 0;
+}
